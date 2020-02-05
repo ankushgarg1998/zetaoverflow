@@ -1,0 +1,658 @@
+{
+	"info": {
+		"_postman_id": "8c9a06b1-e5c4-4813-a5ef-28fde7474f70",
+		"name": "zetaoverflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/questions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/page/0?sortBy=oldest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/questions/page/0?sortBy=\"oldest\"",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"page",
+						"0"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "\"oldest\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:questionId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Who is the Captain\",\n\t\"text\": \"I wanna know who is the captain of america.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/questions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Question 2 updated\",\n\t\"text\": \"This is question two updated again.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:questionId/answers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/answers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:questionId/answers/page/0?sortBy=oldest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/answers/page/1?sortBy=\"oldest\"",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"answers",
+						"page",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "\"oldest\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions/:questionId/answers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 Answer 1 \"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/answers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/answers/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"Answer 2 updated.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/answers/dd0e96e2-4037-4ea0-85cf-53c5f0f4ce8f",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"answers",
+						"dd0e96e2-4037-4ea0-85cf-53c5f0f4ce8f"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/answers/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/answers/dd0e96e2-4037-4ea0-85cf-53c5f0f4ce8f",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"answers",
+						"dd0e96e2-4037-4ea0-85cf-53c5f0f4ce8f"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/questions/:questionId/tags",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/tags",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/questions/:questionId/tags",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"name\": \"namak\"\n    },\n    {\n        \"name\": \"salt\"\n    },\n    {\n        \"name\": \"toothpaste\"\n    },\n    {\n        \"name\": \"teeth\"\n    }\n]"
+				},
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/tags",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/tags/:name/questions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/tags/c/questions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tags",
+						"c",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"anky1998\",\n\t\"email\": \"1998anky@gmail.com\",\n\t\"password\": \"26july1998\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/:userId/name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{{userId}}/name",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{{userId}}",
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"anky1998\",\n\t\"password\": \"26july1998\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login?",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "26july1998",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/questions/:questionId/vote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/vote",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/questions/:questionId/vote/1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Authorization}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/questions/{{questionId}}/vote/0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"questions",
+						"{{questionId}}",
+						"vote",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/questions/search?q=iron",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/questions/search?q=iron",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "iron"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
