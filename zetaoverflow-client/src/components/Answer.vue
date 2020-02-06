@@ -24,7 +24,7 @@
                     <br />
                     <b-button variant="primary" @click="updateAnswer">Update answer</b-button>
                 </div>
-                <b-card-text v-if="!this.edit">{{answer.text}}</b-card-text>
+                <b-card-text v-if="!this.edit" v-html="answer.text">{{answer.text}}</b-card-text>
                 <b-row>
                     <b-col sm="9"></b-col>
                     <b-col sm="3">
@@ -79,6 +79,7 @@ export default {
     },
     methods: {
         loadVotes() {
+            this.answer.text = this.answer.text.replace(/\r?\n/g, "<br />");
             api.get(`/answers/${this.answer.id}/vote`)
                 .then(res => {
                     window.console.log(res.data);
@@ -144,6 +145,10 @@ export default {
 <style scoped>
 .card {
     margin: 15px 0;
+}
+
+.card-text {
+    overflow: scroll;
 }
 
 .votes {

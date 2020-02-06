@@ -39,7 +39,7 @@
                     <br />
                 </div>
 
-                <b-card-text v-if="!this.edit">{{question.text}}</b-card-text>
+                <b-card-text v-if="!this.edit" v-html="question.text">{{question.text}}</b-card-text>
                 <b-row>
                     <b-col sm="8">
                         <ul v-if="!this.edit">
@@ -146,6 +146,7 @@ export default {
         },
         loadTags() {
             // window.console.log("bla", this.question);
+            this.question.text = this.question.text.replace(/\r?\n/g, "<br />");
             api.get(`/questions/${this.question.id}/tags`)
                 .then(res => {
                     this.tags = res.data;
@@ -259,6 +260,7 @@ export default {
 </script>
 
 <style scoped>
+
 .card-title:hover {
     color: #666;
     cursor: pointer;

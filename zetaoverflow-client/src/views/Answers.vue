@@ -5,9 +5,9 @@
         </div>
         <h4>{{this.rows}} Answers</h4>
         <b-tabs content-class="mt-3" align="right">
-            <b-tab @click="sortBy = 'oldest'" title="Oldest" active></b-tab>
+            <b-tab @click="sortBy = 'oldest'" title="Oldest"></b-tab>
             <b-tab @click="sortBy = 'latest'" title="Latest"></b-tab>
-            <b-tab @click="sortBy = 'votes'" title="Most Voted"></b-tab>
+            <b-tab @click="sortBy = 'votes'" title="Most Voted" active></b-tab>
         </b-tabs>
         <!-- <hr /> -->
         <div class="answers">
@@ -55,7 +55,7 @@ export default {
             rows: 1,
             currentPage: 1,
             perPage: 5,
-            sortBy: 'oldest'
+            sortBy: 'votes'
         };
     },
     watch: {

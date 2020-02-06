@@ -45,6 +45,12 @@ footer {
     width: 100%;
 }
 
+pre {
+    background-color: #eff0f1;
+    padding: 12px 8px;
+    border-radius: 3px;
+}
+
 @media only screen and (max-width: 768px) {
     footer {
         font-size: 0.8rem;

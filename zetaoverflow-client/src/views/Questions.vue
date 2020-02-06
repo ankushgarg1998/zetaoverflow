@@ -2,8 +2,8 @@
     <div class="questions">
         <h1>All Questions</h1>
         <b-tabs content-class="mt-3" align="right">
-            <b-tab @click="sortBy = 'oldest'" title="Oldest" active></b-tab>
-            <b-tab @click="sortBy = 'latest'" title="Latest"></b-tab>
+            <b-tab @click="sortBy = 'oldest'" title="Oldest"></b-tab>
+            <b-tab @click="sortBy = 'latest'" title="Latest" active></b-tab>
             <b-tab @click="sortBy = 'votes'" title="Most Voted"></b-tab>
         </b-tabs>
         <!-- <hr /> -->
@@ -44,7 +44,7 @@ export default {
             rows: 1,
             currentPage: 1,
             perPage: 5,
-            sortBy: "oldest"
+            sortBy: "latest"
         };
     },
     watch: {
@@ -112,6 +112,10 @@ export default {
 
 .card {
     margin: 15px 0;
+}
+
+.card-text {
+    overflow: scroll;
 }
 @media only screen and (max-width: 768px) {
     h1 {
