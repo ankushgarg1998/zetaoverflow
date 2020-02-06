@@ -37,10 +37,12 @@
                                         v-if="answer.updatedAt"
                                     >updated {{timeDiff(answer.updatedAt)}} by</sub>
                                 </p>
+                                <router-link :to="`/profile/${answer.user.id}`">
                                 <p>
                                     <b-icon icon="person-fill"></b-icon>
                                     {{answer.user.username}}
                                 </p>
+                                </router-link>
                             </b-col>
                             <b-col v-if="currentUserId === answer.user.id" cols="3" class="options">
                                 <b-icon @click="editAnswer" icon="pencil" class="edit option"></b-icon>
@@ -149,6 +151,7 @@ export default {
 
 .card-text {
     overflow: scroll;
+    max-height: 500px;
 }
 
 .votes {
