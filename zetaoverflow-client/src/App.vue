@@ -7,7 +7,7 @@
             </b-container>
         </div>
         <footer>
-            v1.0 | Made by Ankush, Samarth and Vaibhav for
+            v1.0 | Made by Ankush for
             <strong>Zeta</strong> | 2020
         </footer>
     </div>
